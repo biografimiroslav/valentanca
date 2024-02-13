@@ -6,30 +6,32 @@
     <title>Будешь моей валентинкой?</title>
     <style>
       body {
-        text-align: center;
         padding-top: 50px;
         font-family: Arial, sans-serif;
-        position: relative;
-        overflow: hidden;
+        font-weight: 700;
+        background-color: #ffa4c0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 850px;
+        margin: 0;
       }
       #yesButton,
       #noButton {
-        background-color: #4caf50;
+        background-color: #ff6e9a;
         border: none;
         color: white;
-        padding: 12px 20px;
-        text-align: center;
+        padding: 56px 82px;
         text-decoration: none;
-        display: inline-block;
         font-size: 16px;
-        margin: 4px 2px;
         cursor: pointer;
         border-radius: 8px;
       }
       #noButton {
-        background-color: #f44336;
-        transition: transform 0.5s ease-in-out;
-        position: absolute;
+        background-color: #ff6e9a;
+        cursor: default;
+        transition: transform 0.2s ease-in-out;
       }
       @media only screen and (max-width: 600px) {
         body {
@@ -41,17 +43,36 @@
           font-size: 14px;
         }
       }
+      .list {
+        list-style: none;
+        display: flex;
+        margin-right: 50px;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+      h2 {
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+      }
     </style>
   </head>
   <body>
-    <h2>Ты будешь моей валентинкой?</h2>
-    <button id="yesButton" onclick="alert('Отлично! 😊')">Да</button>
-    <button id="noButton">Нет</button>
+    <h2>Ти будеш моєю валентинкою?</h2>
+    <ul class="list">
+      <li>
+        <button id="yesButton" onclick="alert('Отлично! 😊')">Так</button>
+      </li>
+      <li>
+        <button id="noButton">Ні(</button>
+      </li>
+    </ul>
 
     <script>
       var noButton = document.getElementById("noButton");
       noButton.addEventListener("mouseover", function () {
-        var maxX = 150;
+        var maxX = 350;
         var maxY = 150;
         var newX = Math.random() * (2 * maxX) - maxX;
         var newY = Math.random() * (2 * maxY) - maxY;
