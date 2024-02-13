@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Будешь моей валентинкой?</title>
+    <style>
+      body {
+        text-align: center;
+        padding-top: 50px;
+        font-family: Arial, sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      #yesButton,
+      #noButton {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+      #noButton {
+        background-color: #f44336;
+        transition: transform 0.5s ease-in-out;
+        position: absolute;
+      }
+      @media only screen and (max-width: 600px) {
+        body {
+          padding-top: 20px;
+        }
+        #yesButton,
+        #noButton {
+          padding: 10px 16px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Ты будешь моей валентинкой?</h2>
+    <button id="yesButton" onclick="alert('Отлично! 😊')">Да</button>
+    <button id="noButton">Нет</button>
+
+    <script>
+      var noButton = document.getElementById("noButton");
+      noButton.addEventListener("mouseover", function () {
+        var maxX = 150;
+        var maxY = 150;
+        var newX = Math.random() * (2 * maxX) - maxX;
+        var newY = Math.random() * (2 * maxY) - maxY;
+        noButton.style.transform = "translate(" + newX + "px," + newY + "px)";
+      });
+    </script>
+  </body>
+</html>
